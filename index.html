@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reversi</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <link type="text/css" rel="stylesheet" href = "style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src = "game.js"></script>
+    <script src = "board.js"></script>
+    <script src = "tile.js"></script>
+    <script>
+
+        $(document).ready(function(){
+            //Add click listeners to character buttons
+            $("#rebel-button").click(function() {
+                new Game('black');
+                $("#choose-destiny-modal").addClass('hidden');
+                $("#game-content").removeClass('hidden');
+            });
+            $("#empire-button").click(function() {
+                new Game('white');
+                $("#choose-destiny-modal").addClass('hidden');
+                $("#game-content").removeClass('hidden');
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <div id='choose-destiny-modal'>
+        <div class='modal-header'>
+            <h1>Choose Your Destiny</h1>
+        </div>
+        <div id="modal-body">
+            <div class="char-side" id="modal-rebel">
+                <div class="char-title">Rebels</div>
+                <div id="rebel-button" class="character">
+                    <img src="assets/luke.jpg">
+                </div>
+            </div>
+            <div class="char-side" id="modal-empire">
+                <div class="char-title">Empire</div>
+                <div id="empire-button" class="character">
+                    <img src="assets/vader.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="game-content" class="hidden">
+        <h1 class='title'> REVERSI </h1>
+        <div class="player-container">
+            <div id="player1" class="player-box">
+                <p>Rebel Score</p>
+                <div class='rebelScore'>0</div>
+            </div>
+        </div>
+        <div id = "board-container">
+            <div id="board">
+
+            </div>
+            <div id="smaller-score">
+                <div class="smaller-player-box">
+                    <p>Rebel Score</p>
+                    <div class='rebelScore'>0</div>
+                </div>
+                <div class="smaller-player-box">
+                    <p>Empire Score</p>
+                    <div class='empireScore'>0</div>
+                </div>
+            </div>
+        </div>
+        <div class="player-container">
+            <div id="player2" class="player-box">
+                <div>
+                    <p>Empire Score</p>
+                    <div class='empireScore'>0</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

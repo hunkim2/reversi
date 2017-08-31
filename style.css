@@ -1,0 +1,328 @@
+body {
+    background-color: black;
+    background-image: url("assets/background.jpg");
+    background-size: 1800px 100vh;
+    background-repeat: no-repeat;
+    background-position: center top;
+    height: 100vh;
+}
+
+
+@font-face {
+    font-family: “Starfont”;
+    src: url('assets/starwarfont.TTF');
+}
+
+.hidden{
+    display: none;
+}
+
+#game-content{
+    width: 97vw;
+    height: 97vh;
+}
+
+.player-container{
+    vertical-align: top;
+    width: 19.5%;
+    height: 70vh;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+.player-box{
+    height: 420px;
+    width: 75%;
+    margin-left: 8%;
+    margin-top: 85px;
+    background-color: black;
+    text-align: center;
+    font-size: 40px;
+    padding: 20px;
+}
+
+#player1{
+    border: 4px #FFB03F solid;
+    color: #FFB03F;
+}
+#player2{
+    border: 4px #C50C2C solid;
+    color: #C50C2C;
+}
+#rebelScore{
+    color: white;
+    border: 2px #FFB03F solid;
+    padding: 20px;
+    font-size: 30px;
+    font-family: Starfont,sans-serif;
+}
+#empireScore{
+    color: white;
+    border: 2px #C50C2C solid;
+    padding: 20px;
+    font-size: 30px;
+    font-family: Starfont,sans-serif;
+}
+.turn {
+    box-shadow: 0 0 80px white;
+    opacity: 1;
+}
+
+.not-turn {
+    opacity: 0.75;
+    box-shadow: none;
+}
+#board-container {
+    width: 60%;
+    height: 70vh;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0px 50px;
+    font-size: 0px;
+}
+
+#board {
+    width: 100%;
+    height: 100%;
+    background-color: limegreen;
+    margin: auto;
+}
+
+.square{
+    display: inline-block;
+    width: 12.5%;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    border: 1px black solid;
+    padding: 1%;
+}
+
+.blacksquare{
+    background-color: #4d4d4d;
+}
+
+.redsquare{
+    background-color:darkred;
+}
+
+.row{
+    height: 12.5%;
+}
+
+.tile-container {
+    width:100%;
+    height:100%;
+}
+
+.tile {
+    width: 100%;
+    height: 100%;
+}
+
+.white {
+    background-image: url("assets/white1.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border: solid black;
+    border-radius: 100%;
+    box-sizing: border-box;
+}
+
+.black {
+    background-image: url("assets/black2.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+}
+
+.title{
+    font-family: Starfont,sans-serif;
+    font-weight: bold;
+    font-size: 60px;
+    text-align: center;
+    background: -webkit-linear-gradient(#ff0000,#4c4b4f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.clickable {
+    background-color: #ffba00!important;
+}
+
+.pathway {
+    -webkit-box-shadow: inset 0 0 0 10px rgba(255,255,255, .4);
+    -moz-box-shadow: inset 0 0 0 10px rgba(255,255,255, .4);
+    box-shadow: inset 0 0 0 10px rgba(255,255,255, .4);
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+
+/* ------------- Choose Character Modal ----------- */
+/* ------------------------------------------------ */
+
+
+#choose-destiny-modal{
+    font-family: Starfont;
+    width: 50vw;
+    height: 53vh;
+    margin-left: 25vw;
+    margin-top: 20vh;
+    background-image: url('assets/modal_background.jpg');
+    background-repeat: no-repeat;
+    background-size: 1200px 100%;
+    background-position: center top;
+    border: solid black 4px;
+}
+
+.modal-header{
+    text-align:center;
+    height: 15%;
+}
+
+#modal-body {
+    height: 84%;
+    border-top: solid black 3px;
+}
+
+.char-side{
+    width: 49%;
+    display: inline-block;
+    height: 100%;
+}
+
+.char-title{
+    text-align: center;
+    font-size: 40px;
+}
+
+.character{
+    margin: 10%;
+    margin-top: 3px;
+    width: 80%;
+    height: 80%;
+    border: solid black 3px;
+    border-radius: 4px;
+}
+
+.character:hover{
+    cursor: pointer;
+    border: solid green 3px;
+}
+
+.character img {
+    height: 100%;
+    width: 100%;
+}
+
+#modal-rebel{
+    float: left;
+}
+#modal-empire{
+    float: right;
+}
+
+#smaller-score{
+    margin-top: 30px;
+    display:none;
+    height: auto;
+    width: 100%;
+    padding-bottom: 30px;
+}
+
+.smaller-player-box{
+    height: 16vh;
+    background-color: black;
+    font-size: 30px;
+    color: white;
+    margin-left: 11%;
+    width: 33%;
+    display: inline-block;
+    text-align: center;
+    border: solid pink 2px;
+}
+
+/* ------------- Mobile Responsiveness ------------ */
+/* ------------------------------------------------ */
+
+@media only screen and (max-width: 2500px) {
+    #board{
+        width: 700px;
+        height: 700px;
+    }
+}
+@media only screen and (max-width: 1500px) {
+    #board{
+        width: 600px;
+        height: 600px;
+    }
+}
+@media only screen and (max-width: 1100px) {
+    #board{
+        width: 500px;
+        height: 500px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    #board-container{
+        padding: 0px;
+        width: 100vw;
+    }
+    #choose-destiny-modal{
+        width: 80vw;
+        margin-left: 10vw;
+    }
+    .player-container{
+        display: none;
+    }
+    #smaller-score{
+        display: inline-block;
+    }
+}
+@media only screen and (max-width: 500px) {
+    #board{
+        width: 300px;
+        height: 300px;
+    }
+    #choose-destiny-modal{
+        height: 35vh;
+    }
+    .character{
+        height: 55%;
+    }
+    .char-title{
+        font-size: 30px;
+    }
+    .smaller-player-box{
+        font-size: 17px;
+        height: 13vh;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
